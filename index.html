@@ -1,17 +1,144 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <section class="jumbotron">
+      <h1> Share 'N' Play</h1>
+      <p> Creating a toy sharing community</p>
+
+  <!-- login/sign in modal below -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <button class ="btn btn-primary btn-sm pull-right" data-target="#signUpModal" data-toggle="modal">Sign-Up </button>
+        <button class ="btn btn-primary btn-sm pull-right" data-target="#loginModal" data-toggle="modal">Login </button>
+        <button class ="btn btn-primary btn-sm pull-right" data-target="#changePassword" data-toggle="modal">Change Password </button>
+        <button id="sign-out" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"> Sign Out</button>
+
+
+<!-- Sign in below -->
+        <div class="modal fade" data-keyboard="false" id="loginModal" data-backdrop="static" tabindex="-1">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- makes the button close when clicked  -->
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sign-In</h4>
+
+                <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="signInInputUserName">Username</label>
+                          <input name="credentials[email]" class="form-control" placeholder="Login Username"
+                                  type="email" id="signInInputUserName" />
+                      </div>
+                      <div class="form-group">
+                          <label for="signInInputPassword">Password</label>
+                          <input  name="credentials[password]" class="form-control" placeholder="Login Password"
+                                  type="password" id="signInInputPassword" />
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Login</button>
+                  <button class="btn btn-default" data-dismiss="modal">Close</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SIgn Up below -->
+      <div class="modal fade" data-keyboard="false" id="signUpModal" data-backdrop="static" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- makes the button close when clicked  -->
+              <button class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Sign-up</h4>
+
+              <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="signUpInputUserName">Email</label>
+                        <input name="credentials[email]" class="form-control" placeholder="Email"
+                                type="email" id="signUpInputUserName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpInputPassword1">Password</label>
+                        <input name="credentials[password]" class="form-control" placeholder="Password"
+                                type="password" id="signUpInputPassword1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpInputPassword2">Password Confirmation</label>
+                        <input name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password"
+                                type="password" id="signUpInputPassword2" />
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Login</button>
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ChangePW below -->
+    <div class="modal fade" data-keyboard="false" id="changePassword" data-backdrop="static" tabindex="-1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- makes the button close when clicked  -->
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Change Password</h4>
+
+            <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <label for="changePassword">Current Password</label>
+                      <input name="passwords[old]" class="form-control" placeholder="current Password"
+                              type="text" id="changePassword" />
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword">New Password</label>
+                      <input name="passwords[new]" class="form-control" placeholder="Password"
+                              type="password" id="inputPassword" />
+                  </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button class="btn btn-default" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- sign out button -->
+ <!-- <button id="sign-out" type="button" class="btn btn-secondary btn-style" data-toggle="modal"> Sign Out</button> -->
+  <!-- Div below is ending point for the auth buttons/modals -->
+    </div>
+  </div>
+</div>
+</section>
+</header>
+</body>
+
 </html>
