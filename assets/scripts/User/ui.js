@@ -3,7 +3,7 @@ const store = require('../store.js')
 const signUpSuccess = function (response) {
   $('#loginModal').modal('show')
   $('#signUpModal').modal('hide')
-  $('#content-msg').html("You've signed up, Please Login to begin the game!")
+  $('#content-msg').html("You've signed up")
 }
 
 const signUpFailure = function (response) {

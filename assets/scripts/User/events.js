@@ -1,6 +1,6 @@
 'use strict '
 
-const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields.js')
 const authApi = require('./api')
 const authUi = require('./ui')
 
@@ -8,6 +8,8 @@ const onSignUp = function (event) {
   console.log(`on sign up button works`)
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(`event.target is`, event.target)
+  console.log(`data is`, data)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpFailure)
@@ -17,6 +19,7 @@ const onSignIn = function (event) {
   console.log(`on sign in button works`)
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(`data is`, data)
 
   authApi.signIn(data)
     .then(authUi.signInSuccess)
