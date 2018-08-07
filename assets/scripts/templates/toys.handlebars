@@ -1,0 +1,22 @@
+{{#each toys as |toy|}}
+
+  <div id="view-all-toys-handlebars" class="card" data-id="{{toy.id}}">
+    <div class="card-body col-sm-2 col-med-2" style="background-color: blue; border-color: red; width: 30.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
+      <div class="show-options col-xs-12 delete-toy">
+    <h3>Name:{{toy.name}}</h3> <h3>Description:{{toy.description}}</h3>
+
+    <button type="button pull-right" data-id="{{toy.id}}" class="shareToy btn btn-primary">Request to share</button>
+
+
+    <!-- <form class='update-toy-form' data-id="{{toy.id}}">
+            <input type="text" name="toy[name]" tabindex="4" class="form-control" placeholder="{{toy.name}}" required>
+          <input type="text" name="toy[description]" tabindex="4" class="form-control" placeholder="{{toy.description}}" required>
+          <h3><input type="radio" name="toy[is_available]" value="true"><b>&nbsp;True</b></h3>
+          <h3><input type="radio" name="toy[is_available]" value="false"><b>&nbsp;False</b></h3>
+            <button style="margin: 15px 5px;" type="submit" class="btn btn-info btn-style update-toy-form">UPDATE TOY</button>
+          </form> -->
+      </div>
+    </div>
+  </div>
+
+{{/each}}

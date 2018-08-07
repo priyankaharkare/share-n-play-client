@@ -1,0 +1,47 @@
+{{#each toys as |toy|}}
+
+  <div id="view-user-toys-handlebars" class="card" data-id="{{toy.id}}">
+    <div class="card-body col-sm-2 col-med-2" style="background-color: white; border-color: red; width: 31.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
+      <div class="show-options col-xs-12 response-message">
+    <h3>Name:{{toy.name}}</h3> <h3>Description:{{toy.description}}</h3>
+    <h3>Is Available:{{toy.is_available}}</h3>
+
+    <button type="button" data-id="{{toy.id}}" class="updateButton btn btn-primary">Update Toy</button>
+    <button type="button" data-id="{{toy.id}}" class="deleteButton btn btn-primary">Delete Toy</button>
+
+<!-- update toy modal below -->
+<div class="modal fade updateModal" data-id="modal{{toy.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title toyUpdateTitle">Update Toy</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="update-form" data-id="{{toy.id}}">
+                 <div class="form-group">
+                  <label for="formGroupExampleInput">Name</label>
+                  <input name = "toy[name]" value="{{toy.name}}" type="text" data-id="{{item.id}}" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Description</label>
+                  <input  name ="toy[description]" class="form-control" type="text" data-id="{{toy.id}}" value="{{toy.description}}"></input>
+                </div>
+                <div class="form-group">
+                  <h3><input type="radio" name="toy[is_available]" value="true"><b>&nbsp;True</b></h3>
+                  <h3><input type="radio" name="toy[is_available]" value="false"><b>&nbsp;False</b></h3>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" data-id="{{item._id}}"  class="updateSubmitButton btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+
+{{/each}}

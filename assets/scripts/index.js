@@ -12,6 +12,8 @@ const toyEvents = require('./toys/events')
 
 $(() => {
   // your JS code goes here
+  toyEvents.addHandlers()
+
   // Authentication Event Handler
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
@@ -20,4 +22,10 @@ $(() => {
 
   // create Toy
   $('#create-toy-form').on('submit', toyEvents.onCreateToy)
+  // view toys
+  $('#view-all-toys-btn').on('click', toyEvents.onGetToys)
+  // user toys
+  $('#view-user-toys-btn').on('click', toyEvents.onGetUserToys)
+  // update toy
+  // $('#content-msg').on('submit', '.update-toy-form', toyEvents.onUpdateToy)
 })
