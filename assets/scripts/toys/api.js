@@ -47,9 +47,21 @@ const updateToy = function (data, toyId) {
   })
 }
 
+// const updateToyUser = function (data, toyId) {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: config.apiUrl + '/toys/' + toyId,
+//     data: data,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   createToy,
   getToys,
   deleteToy,
   updateToy
+  // updateToyUser
 }
