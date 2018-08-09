@@ -1,22 +1,52 @@
 {{#each toys as |toy|}}
 
   <div id="view-all-toys-handlebars" class="card" data-id="{{toy.id}}">
-    <div class="card-body col-sm-2 col-med-2" style="background-color: blue; border-color: red; width: 30.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
+
+    <div class="card-body col-sm-2 col-med-2" class ="{{toy-id}}" style="background-color: blue; border-color: red; width: 30.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
       <div class="show-options col-xs-12 delete-toy">
     <h3>Name:{{toy.name}}</h3> <h3>Description:{{toy.description}}</h3>
 
-    <button type="button pull-right" data-id="{{toy.id}}" class="shareToy btn btn-primary">Request to share</button>
+    <button type="button pull-right" data-toggle="modal" data-target= '#{{toy.id}}'  data-id="{{toy.id}}" class="shareToyButton btn btn-primary">Request to share</button>
+    <!-- Are you sure modal -->
+<!--
+    <div class="modal fade confirm-modal" tabindex="-1"  data-id="{{toy.id}}" id="{{toy.id}}" role="dialog">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
 
 
-    <!-- <form class='update-toy-form' data-id="{{toy.id}}">
-            <input type="text" name="toy[name]" tabindex="4" class="form-control" placeholder="{{toy.name}}" required>
-          <input type="text" name="toy[description]" tabindex="4" class="form-control" placeholder="{{toy.description}}" required>
-          <h3><input type="radio" name="toy[is_available]" value="true"><b>&nbsp;True</b></h3>
-          <h3><input type="radio" name="toy[is_available]" value="false"><b>&nbsp;False</b></h3>
-            <button style="margin: 15px 5px;" type="submit" class="btn btn-info btn-style update-toy-form">UPDATE TOY</button>
-          </form> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <form class = "change-user" data-id="{{toy.id}}">
+        <p>Are you sure you want to take this toy?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" data-id="{{item._id}}" class="btn btn-primary confirmButton">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No thanks ! </button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+</div> -->
+
+
+
       </div>
     </div>
   </div>
 
 {{/each}}
+<!--
+<ul class="list-group">
+ <li class="list-group-item">Title: {{assignment.title}}</li>
+ <li class="list-group-item">Description: {{assignment.description}}</li>
+ <li class="list-group-item"><div class="custom-control custom-checkbox">
+   <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+   <label class="custom-control-label" for="defaultUnchecked">Completed</label></li>
+</div> -->

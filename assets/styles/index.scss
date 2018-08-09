@@ -1,2 +1,43 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Teko:700');
+
+// .card {
+//   background-color: blue;
+//   border-color: red;
+//   min-height: 300px;
+//   padding-top: 20px;
+//   width: 30.5%;
+//   margin: 10px;
+//   }
+
+.btn-style {
+  margin: 10px;
+}
+
+.brand-custom {
+  color: #fff;
+  font-family: 'Teko', sans-serif;
+}
+
+.round-display {
+  text-align: center;
+  // padding-bottom: 15px;
+}
+
+#success-message {
+  color: #1CB94E;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 30px;
+  text-align: center;
+}
+
+#message {
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 30px;
+  text-align: center;
+}

@@ -22,6 +22,7 @@ $(() => {
 
   // create Toy
   $('#create-toy-form').on('submit', toyEvents.onCreateToy)
+
   // view toys
   $('#view-all-toys-btn').on('click', toyEvents.onGetToys)
   // user toys

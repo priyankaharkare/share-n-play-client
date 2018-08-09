@@ -3,27 +3,36 @@ const store = require('../store')
 const showToysTemplate = require('../templates/toys.handlebars')
 const showUserToyTemplate = require('../templates/UserToys.handlebars')
 
-const createToySuccess = function(data) {
+const createToySuccess = function (data) {
+  console.log(`create toy success data is`, data)
+  store.toy = {}
+  store.toy.id = data.toy.id
   // $('#createItemModal').modal('hide')
   // $('#create-item-form')[0].reset()
   $('#content-msg').html('Toy is created')
+  console.log(`data.toy.id is`, data.toy.id)
 }
 
-const createToyError = function() {
+const createToyError = function () {
   // $('#createModalLabel').css('color', 'red')
   // $('#createModalLabel').html('Something went wrong creating item try again!')
   $('#content-msg').html('no Toy is created')
 }
 
-const getUserToysSuccess = function(data) {
+const getUserToysSuccess = function (data) {
   store.toys = data.toys
   console.log(`get user toys data is `, data)
+  console.log('store.user.id is ', store.user.id)
   const userToys = []
   for (let i = 0; data.toys.length > i; i++) {
-    if (data.toys[i].user.id === store.user.id) {
-      userToys.push(data.toys[i])
+    if (data.toys[i].user !== null) {
+      if (data.toys[i].user.id === store.user.id) {
+        console.log('data.toys[i].user.id is ', data.toys[i].user.id)
+        userToys.push(data.toys[i])
+      }
     }
   }
+
   if (userToys.length > 0) {
     const showUserToys = showUserToyTemplate({
       toys: userToys
@@ -32,7 +41,7 @@ const getUserToysSuccess = function(data) {
     console.log(`user Toys is `, userToys)
     // console.log(`showUser Toys is `, showUserToys)
   } else {
-    $('#content-msg').text('You have no toys. Please create a survey!')
+    $('#content-msg').text('You have no toys. Please create a toy!')
   }
 }
 
@@ -40,7 +49,7 @@ const getUserToysSuccess = function(data) {
 const getToysSuccess = function (data) {
   console.log(`data is`, data)
   store.toys = data.toys
-  console.log(`store.toys.is_available `, store.toys.is_available)
+  console.log(`data.toys `, data.toys)
   const allToys = []
   for (let i = 0; data.toys.length > i; i++) {
     if (data.toys[i].is_available === true) {
@@ -58,11 +67,15 @@ const deleteToySuccess = function () {
   // console.log(`data is`, data)
 }
 
-const updateToySuccess = function(toyId) {
+const updateToySuccess = function (toyId) {
   console.log(`item is updated`)
   $(`[data-id="modal${toyId}"]`).modal('hide')
 }
 
+const requestShareSuccess = function (toyId) {
+  console.log('is it sharing')
+  console.log(`toy sharing of`, toyId, `successful`)
+}
 // const updateItemSuccess = function (itemId) {
 //   $(`[data-id="modal${itemId}"]`).modal('hide')
 //   $('.modal-backdrop').remove()
@@ -75,5 +88,6 @@ module.exports = {
   getToysSuccess,
   deleteToySuccess,
   updateToySuccess,
-  getUserToysSuccess
+  getUserToysSuccess,
+  requestShareSuccess
 }

@@ -23,9 +23,11 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <button class="btn btn-primary btn-sm pull-right" data-target="#signUpModal" data-toggle="modal">Sign-Up </button>
-            <button class="btn btn-primary btn-sm pull-right" data-target="#loginModal" data-toggle="modal">Login </button>
-            <button class="btn btn-primary btn-sm pull-right" data-target="#changePassword" data-toggle="modal">Change Password </button>
+            <button id="sign-up-button" class="btn btn-primary btn-sm pull-right" data-target="#signUpModal" data-toggle="modal">Sign-Up </button>
+
+            <button id="sign-in-button" class="btn btn-primary btn-sm pull-right" data-target="#loginModal" data-toggle="modal">Login </button>
+
+            <button id="change-password-button" class="btn btn-primary btn-sm pull-right" data-target="#changePassword" data-toggle="modal">Change Password </button>
             <button id="sign-out" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"> Sign Out</button>
 
 
@@ -130,7 +132,48 @@
       </div>
     </section>
   </header>
+  <!-- button to get toys -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-2">
+        <input type="button" id="view-all-toys-btn" class="form-control btn btn-all-toys" value="View All Toys">
+      </div>
+      <div class="col-sm-2">
+        <input type="button" id="view-user-toys-btn" class="form-control btn btn-user-toys" value="View Your Toys">
+      </div>
+    </div>
+  </div>
+  <!-- empty div below -->
   <div id="content-msg"></div>
+
+  <!-- Success Message Modal -->
+  <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div id="success-message"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Modal -->
+        <div id="messageModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="message"></div>
+              </div>
+            </div>
+          </div>
+        </div>
   <!-- Create toy below -->
   <button class="btn btn-primary btn-sm pull-left" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
 
@@ -167,17 +210,8 @@
       </div>
     </div>
   </div>
-  <!-- button to get toys -->
-  <div class="form-group">
-    <div class="row">
-      <div class="col-sm-2">
-        <input type="button" id="view-all-toys-btn" class="form-control btn btn-all-toys" value="View All Toys">
-      </div>
-      <div class="col-sm-2">
-        <input type="button" id="view-user-toys-btn" class="form-control btn btn-user-toys" value="View Your Toys">
-      </div>
-    </div>
-  </div>
+
+
 </body>
 
 </html>

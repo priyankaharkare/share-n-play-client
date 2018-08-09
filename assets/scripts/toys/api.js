@@ -47,21 +47,26 @@ const updateToy = function (data, toyId) {
   })
 }
 
-// const updateToyUser = function (data, toyId) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: config.apiUrl + '/toys/' + toyId,
-//     data: data,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const requestShare = function (toyId) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/toys/' + toyId,
+    data: {
+      toy: {
+        user_id: store.user.id
+      }
+    },
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   createToy,
   getToys,
   deleteToy,
-  updateToy
+  updateToy,
+  requestShare
   // updateToyUser
 }

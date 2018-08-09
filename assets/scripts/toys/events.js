@@ -2,18 +2,37 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const toysUi = require('./ui.js')
 const toysApi = require('./api.js')
+// const usersToysUi = require('../usersToys/ui.js')
+
+const store = require('../store')
 
 const onCreateToy = function (event) {
+  $('#createToyModal').modal('hide')
   event.preventDefault()
   console.log(`create toy clicked`)
   const data = getFormFields(event.target)
   console.log(`data is`, data)
-  console.log(`event is`, event)
+  const userId = store.user.id
+  console.log(`userId is `, userId)
   toysApi.createToy(data)
     .then(toysUi.createToySuccess)
-    // .then(onGetToys)
     .catch(toysUi.createToyError)
 }
+
+// const onRequestShare = function (event) {
+//   console.log(`request share worked`)
+//   console.log(`event is`, event)
+//   const toyId = $(event.target).attr('data-id')
+//   console.log(`toyId is `, toyId)
+// // const newToy =
+// }
+//
+// const duplicateToy = $('.{{toy-id}}').clone()
+//
+//
+// var clonedDiv = $('#yourDivId').clone();
+// clonedDiv.attr("id", "newId");
+// $('#yourDivId').after(cloneDiv);
 
 const onGetToys = () => {
   console.log(`get toy clicked`)
@@ -56,6 +75,14 @@ const onOpenUpdateModal = function (event) {
   $(`[data-id="modal${toyId}"]`).modal('show')
 }
 
+// const onOpenConfirmModal = function (event) {
+//   // itemUi.resetUiHandleing()
+//   console.log(`clicked it`)
+//   const toyId = $(event.target).attr('data-id')
+//   console.log(`toy id is `, toyId)
+//   $(`[data-id="modal${toyId}"]`).modal('show')
+// }
+
 const onUpdateToy = function (event) {
   event.preventDefault()
   console.log(`update toy clicked`)
@@ -69,10 +96,23 @@ const onUpdateToy = function (event) {
     .catch(toysUi.updateToyError)
 }
 
+const onRequestShare = function (event) {
+  console.log(`request share worked`)
+  console.log(`event is`, event)
+  const toyId = $(event.target).attr('data-id')
+  console.log(`toyId is `, toyId)
+  console.log(`store.user id is `, store.user.id)
+  toysApi.requestShare(toyId)
+    .then(toysUi.requestShareSuccess)
+    .catch(toysUi.requestShareError)
+}
+
 const addHandlers = () => {
   $('#content-msg').on('click', '.deleteButton', onDeleteToy)
   $('#content-msg').on('submit', '.update-form', onUpdateToy)
   $('#content-msg').on('click', '.updateButton', onOpenUpdateModal)
+  // $('#content-msg').on('click', '.shareToyButton', onOpenConfirmModal)
+  $('#content-msg').on('click', '.shareToyButton', onRequestShare)
 }
 
 module.exports = {
@@ -82,5 +122,6 @@ module.exports = {
   onUpdateToy,
   onGetUserToys,
   addHandlers,
-  onOpenUpdateModal
+  onOpenUpdateModal,
+  onRequestShare
 }
