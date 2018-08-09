@@ -28,7 +28,6 @@ const signInSuccess = function (response) {
   store.user = response.user
   store.user.id = response.user.id
   // $('#content-msg').html("You've signed in!")
-  console.log(`user id is `, response.user.id)
   // $('#successModal').modal('show')
   $('#success-message').html('Successfully logged in as ' + store.user.email)
 }

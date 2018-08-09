@@ -4,7 +4,6 @@ const store = require('../store')
 const config = require('../config')
 
 const createToy = function (data) {
-  console.log(`create toy api data is `, data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/toys',
@@ -15,7 +14,6 @@ const createToy = function (data) {
   })
 }
 const getToys = function () {
-  // console.log(`get Toys data is`, data)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/toys',
@@ -26,7 +24,6 @@ const getToys = function () {
 }
 
 const deleteToy = function (toyId) {
-  console.log(`toyId is`, toyId)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/toys/' + toyId,
@@ -53,6 +50,7 @@ const requestShare = function (toyId) {
     url: config.apiUrl + '/toys/' + toyId,
     data: {
       toy: {
+        is_available: false,
         user_id: store.user.id
       }
     },
@@ -68,5 +66,4 @@ module.exports = {
   deleteToy,
   updateToy,
   requestShare
-  // updateToyUser
 }
