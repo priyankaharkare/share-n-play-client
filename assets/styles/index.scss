@@ -16,6 +16,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 10px;
 }
 
+h5 {
+  word-wrap: break-word;
+}
+
 .brand-custom {
   color: #fff;
   font-family: 'Teko', sans-serif;

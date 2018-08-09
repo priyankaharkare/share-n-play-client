@@ -29,4 +29,16 @@ $(() => {
   $('#view-user-toys-btn').on('click', toyEvents.onGetUserToys)
   // update toy
   // $('#content-msg').on('submit', '.update-toy-form', toyEvents.onUpdateToy)
+
+  $(document).ready(function () {
+    $('#sign-up-button').show()
+    $('#sign-in-button').show()
+    $('#change-password-button').hide()
+    $('#sign-out-button').hide()
+    $('#create-toy-button').hide()
+    $('#view-all-toys-btn').hide()
+    $('#view-user-toys-btn').hide()
+    $('.share-toy-button').hide()
+    $('#sign-out').hide()
+  })
 })

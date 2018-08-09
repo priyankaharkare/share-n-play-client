@@ -4,38 +4,9 @@
 
     <div class="card-body col-sm-2 col-med-2" class ="{{toy-id}}" style="background-color: blue; border-color: red; width: 30.5%; min-height: 300px; margin: 10px; padding-top: 20px;">
       <div class="show-options col-xs-12 delete-toy">
-    <h3>Name:{{toy.name}}</h3> <h3>Description:{{toy.description}}</h3>
+    <h5>Name:{{toy.name}}</h5> <h5>Description:{{toy.description}}</h5>
 
     <button type="button pull-right" data-toggle="modal" data-target= '#{{toy.id}}'  data-id="{{toy.id}}" class="shareToyButton btn btn-primary">Request to share</button>
-    <!-- Are you sure modal -->
-<!--
-    <div class="modal fade confirm-modal" tabindex="-1"  data-id="{{toy.id}}" id="{{toy.id}}" role="dialog">
-   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-      </div>
-      <div class="modal-body">
-        <form class = "change-user" data-id="{{toy.id}}">
-        <p>Are you sure you want to take this toy?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" data-id="{{item._id}}" class="btn btn-primary confirmButton">Yes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No thanks ! </button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-
-</div> -->
-
-
 
       </div>
     </div>

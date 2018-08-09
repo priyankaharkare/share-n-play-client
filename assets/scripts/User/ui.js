@@ -18,8 +18,10 @@ const signInSuccess = function (response) {
   $('#sign-up-button').hide()
   $('#loginModal').modal('hide')
   $('#change-password-button').show()
-  $('#sign-out-button').show()
-  $('#create-toy-button').show()
+  $('#sign-out').show()
+  $('.share-toy-button').show()
+
+  // $('#create-toy-button').show()
   $('#view-all-toys-btn').show()
   $('#view-user-toys-btn').show()
 
@@ -51,10 +53,11 @@ const signOutSuccess = function (response) {
   $('#sign-up-button').show()
   $('#sign-in-button').show()
   $('#change-password-button').hide()
-  $('#sign-out-button').hide()
   $('#create-toy-button').hide()
   $('#view-all-toys-btn').hide()
+  $('.share-toy-button').hide()
   $('#view-user-toys-btn').hide()
+  $('#sign-out').hide()
 
   $('#successModal').modal('show')
   $('#success-message').html(`You are signed out, GoodBye and See You Soon !`)
