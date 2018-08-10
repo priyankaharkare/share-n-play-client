@@ -14,6 +14,8 @@ const signUpSuccess = function (response) {
   $('#loginModal').modal('show')
   $('#signUpModal').modal('hide')
   $('#content-msg').html("You've signed up")
+  $('#sign-up-form').find('input').val('')
+
   // $('#successModal').modal('show')
   // clearFields()
   // $('.modal-backdrop').remove()
@@ -21,14 +23,15 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function (response) {
-  clearFields()
   $('#successModal').modal('show')
   $('#success-message').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
+  $('#sign-up-form').find('input').val('')
 }
 
 const signInSuccess = function (response) {
   clearFields()
+  $('#sign-in-button').hide()
   $('#sign-up-button').hide()
   $('#loginModal').modal('hide')
   $('#change-password-button').show()
