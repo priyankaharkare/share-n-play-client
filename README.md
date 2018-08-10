@@ -2,12 +2,13 @@ ERD : https://imgur.com/a/bz5QApQ
 Wireframes https://imgur.com/a/LXSenwx
 
 Front End/Client
-Deployed:
-Repo:
+Deployed:https://priyankaharkare.github.io/share-n-play-client/
+Repo:https://github.com/priyankaharkare/share-n-play-client
 
 Back End/Api
-Deployed:
-Repo:
+Deployed:https://share-n-play.herokuapp.com'
+
+Repo:https://github.com/priyankaharkare/share-n-play-api
 
 User Stories:
 

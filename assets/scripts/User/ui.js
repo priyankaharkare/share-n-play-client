@@ -59,7 +59,6 @@ const changePasswordSuccess = function (response) {
 }
 
 const changePasswordFailure = function (response) {
-  clearFields()
   $('#successModal').modal('show')
   $('#success-message').html(`Sorry, we could not change your password, Please try again ! `)
 }
