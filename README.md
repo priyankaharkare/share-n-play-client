@@ -29,6 +29,8 @@ Javascript
 jQuery
 Ajax
 
+![Share N Play](./public/shareNPlay.png)
+
 Concept:
 I wanted to create a toy sharing app for families that want to
 share their kids' toys with other families.
