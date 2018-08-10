@@ -22,6 +22,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
+  console.log(`changepw event`)
   const data = getFormFields(event.target)
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)

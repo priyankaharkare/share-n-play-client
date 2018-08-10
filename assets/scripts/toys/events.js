@@ -20,20 +20,26 @@ const onGetToys = () => {
     .catch(toysUi.getToysError)
 }
 
+const refreshToysOnDelete = function (event) {
+  $('#content-msg').html('')
+  toysApi.getToys()
+    .then(toysUi.deleteToySuccess)
+}
+
 const onDeleteToy = function (event) {
   event.preventDefault()
   // toyUi.resetUiHandleing()
   const toyId = $(event.target).attr('data-id')
   toysApi.deleteToy(toyId)
-    // .then(onGettoys)
-    .then(toysUi.deleteToySuccess)
+    .then(refreshToysOnDelete)
     .catch(toysUi.deleteToyError)
 }
 
 const onGetUserToys = function (event) {
   // const data = getFormFields(event.target)
   event.preventDefault()
-  toysApi.getToys()    .then(toysUi.getUserToysSuccess)
+  toysApi.getToys()
+    .then(toysUi.getUserToysSuccess)
     .catch(toysUi.getUserToysError)
     // .then(toysUi.getToysSuccess)
     // .catch(toysUi.getToysError)
@@ -45,13 +51,20 @@ const onOpenUpdateModal = function (event) {
   $(`[data-id="modal${toyId}"]`).modal('show')
 }
 
+const refreshToys = function (event) {
+  $('#content-msg').html('')
+  toysApi.getToys()
+    .then(toysUi.getUserToysSuccess)
+    .catch()
+}
+
 const onUpdateToy = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const toyId = $(event.target).attr('data-id')
+  $('.modal-backdrop').remove()
   toysApi.updateToy(data, toyId)
     .then(toysUi.updateToySuccess)
-    // .then(onGettoys)
     .catch(toysUi.updateToyError)
 }
 
@@ -59,8 +72,13 @@ const onRequestShare = function (event) {
   const toyId = $(event.target).attr('data-id')
   toysApi.requestShare(toyId)
     .then(toysUi.requestShareSuccess)
-    .then(toysUi.getToys)
     .catch(toysUi.requestShareError)
+}
+
+const refreshToysOnRequest = function (event) {
+  $('#content-msg').html('')
+  toysApi.getToys()
+    .then(toysUi.requestToySuccess)
 }
 
 const addHandlers = () => {
@@ -79,5 +97,8 @@ module.exports = {
   onGetUserToys,
   addHandlers,
   onOpenUpdateModal,
-  onRequestShare
+  onRequestShare,
+  refreshToysOnDelete,
+  refreshToysOnRequest,
+  refreshToys
 }

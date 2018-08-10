@@ -16,6 +16,9 @@
 <body>
   <header>
     <section class="jumbotron">
+      <div class="col-md-6">
+      <!-- <img width="60px" src="https://imgur.com/a/8k6pzHG" class="rounded float-right" alt="picture of a toddler's toy"> -->
+    </div>
       <h1> Share 'N' Play</h1>
       <p> Creating a toy sharing community</p>
 
@@ -53,7 +56,8 @@
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-default">Login</button>
-                      <button class="btn btn-default" data-dismiss="modal">Close</button>
+
+                      <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
                     </div>
                     </form>
                   </div>
@@ -86,7 +90,8 @@
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-default">Login</button>
-                      <button class="btn btn-default" data-dismiss="modal">Close</button>
+
+                      <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
                     </div>
                     </form>
                   </div>
@@ -116,8 +121,8 @@
                       </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-default">Submit</button>
-                      <button class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button id="change-pw-button" type="submit" class="btn btn-default">Submit</button>
+                      <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
 
                     </div>
                   </div>
@@ -133,7 +138,7 @@
     </section>
   </header>
   <!-- Toy button-->
-  <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Share your Toy</button>
+  <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
 
   <div class="form-group">
     <div class="row">
@@ -192,20 +197,20 @@
             <form id="create-toy-form">
               <div class="form-group">
                 <label for="createToyName">Toy Name</label>
-                <input name="toy[name]" class="form-control" placeholder="Toy name" type="text" id="createToyName">
+                <input name="toy[name]" class="form-control" placeholder="Toy name" required type="text" id="createToyName">
               </div>
               <div class="form-group">
                 <label for="createToyDescription">Description</label>
-                <input name="toy[description]" class="form-control" placeholder="How would you best describe the toy" type="text" id="createToyDescription">
+                <input name="toy[description]" class="form-control" placeholder="How would you best describe the toy" required type="text" id="createToyDescription">
               </div>
-              <div>
+              <div><label for="createToyDescription">Do you want to share this?</label>
                 <h3><input type="radio" name="toy[is_available]" value="true"><b>&nbsp;True</b></h3>
                 <h3><input type="radio" name="toy[is_available]" value="false"><b>&nbsp;False</b></h3>
               </div>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default">Submit</button>
-            <button class="btn btn-default" data-dismiss="modal">Close</button>
+            <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
           </div>
           </form>
         </div>

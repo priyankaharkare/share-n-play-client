@@ -3,18 +3,30 @@ const store = require('../store')
 const showToysTemplate = require('../templates/toys.handlebars')
 const showUserToyTemplate = require('../templates/UserToys.handlebars')
 
+const clearFields = function () {
+  $('#sign-in-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
+  // $('.update-form').find('input').val('')
+  $('#create-toy-form').find('input').val('')
+}
+
 const createToySuccess = function (data) {
   store.toy = {}
   store.toy.id = data.toy.id
   // $('#createItemModal').modal('hide')
   // $('#create-item-form')[0].reset()
-  $('#content-msg').html('Toy is created')
- }
+  $('#successModal').modal('show')
+  $('#success-message').html(`You have added your toy! `)
+  clearFields()
+}
 
 const createToyError = function () {
   // $('#createModalLabel').css('color', 'red')
   // $('#createModalLabel').html('Something went wrong creating item try again!')
-  $('#content-msg').html('no Toy is created')
+  clearFields()
+  $('#successModal').modal('show')
+  $('#success-message').html(`Uh oh, please try again! `)
 }
 
 const getUserToysSuccess = function (data) {
@@ -32,9 +44,13 @@ const getUserToysSuccess = function (data) {
     const showUserToys = showUserToyTemplate({
       toys: userToys
     })
+    $('#successModal').modal('show')
+    $('#success-message').html(`Your toys below! `)
     $('#content-msg').html(showUserToys)
+    clearFields()
   } else {
     $('#content-msg').text('You have no toys. Please create a toy!')
+    clearFields()
   }
 }
 
@@ -51,23 +67,34 @@ const getToysSuccess = function (data) {
     toys: allToys
   })
   $('#content-msg').html(showAllToys)
+  $('#successModal').modal('show')
+  $('#success-message').html(`All toys below !`)
+  clearFields()
 }
 
 const deleteToySuccess = function () {
+  $('#successModal').modal('show')
+  $('#success-message').html(`Toy deleted ! `)
+  clearFields()
 }
 
 const updateToySuccess = function (toyId) {
-  $(`[data-id="modal${toyId}"]`).modal('hide')
+  clearFields()
+  $('#content-msg').html('')
+  $('.modal-backdrop').remove()
+  $('#successModal').modal('show')
+  $('#success-message').html(`Toy has been updated !!`)
+  // $('#content-msg').html('Toy is Updated !')
 }
 
 const requestShareSuccess = function (toyId) {
-
+  console.log(`request happened`)
+  $('.modal-backdrop').remove()
+  clearFields()
+  $('#content-msg').html('')
+  $('#successModal').modal('show')
+  $('#success-message').html(`Transfer Requested !! Hope the kids enjoy the toy! `)
 }
-// const updateItemSuccess = function (itemId) {
-//   $(`[data-id="modal${itemId}"]`).modal('hide')
-//   $('.modal-backdrop').remove()
-//   $('.update-form')[0].reset()
-// }
 
 module.exports = {
   createToySuccess,

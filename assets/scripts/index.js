@@ -30,6 +30,14 @@ $(() => {
   // update toy
   // $('#content-msg').on('submit', '.update-toy-form', toyEvents.onUpdateToy)
 
+  $('.close-button').click(function () {
+    $('#sign-in-form').find('input').val('')
+    $('#sign-up-form').find('input').val('')
+    $('#change-password-form').find('input').val('')
+    $('.update-form').find('input').val('')
+    $('#create-toy-form').find('input').val('')
+  })
+
   $(document).ready(function () {
     $('#sign-up-button').show()
     $('#sign-in-button').show()
