@@ -9,12 +9,15 @@ const clearFields = function () {
 }
 
 const signUpSuccess = function (response) {
+  // console.log(`response.user`, response.user)
+  // store.user.email = response.user.email
   $('#loginModal').modal('show')
   $('#signUpModal').modal('hide')
-  // $('#content-msg').html("You've signed up")
-  $('#successModal').modal('show')
-  clearFields()
-  $('#success-message').html('Welcome ' + store.user.email + 'Login to start sharing the toys')
+  $('#content-msg').html("You've signed up")
+  // $('#successModal').modal('show')
+  // clearFields()
+  // $('.modal-backdrop').remove()
+  // $('#success-message').html(`Welcome !`)
 }
 
 const signUpFailure = function (response) {
@@ -52,7 +55,6 @@ const signInFailure = function (response) {
 }
 
 const changePasswordSuccess = function (response) {
-  console.log(`change pw`)
   clearFields()
   $('#successModal').modal('show')
   $('#success-message').html(`Your password has been updated`)

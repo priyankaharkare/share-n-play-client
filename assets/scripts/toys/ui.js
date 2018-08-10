@@ -66,6 +66,7 @@ const getToysSuccess = function (data) {
   const showAllToys = showToysTemplate({
     toys: allToys
   })
+  $('.modal-backdrop').remove()
   $('#content-msg').html(showAllToys)
   $('#successModal').modal('show')
   $('#success-message').html(`All toys below !`)
@@ -73,6 +74,7 @@ const getToysSuccess = function (data) {
 }
 
 const deleteToySuccess = function () {
+  $('.modal-backdrop').remove()
   $('#successModal').modal('show')
   $('#success-message').html(`Toy deleted ! `)
   clearFields()
@@ -88,7 +90,6 @@ const updateToySuccess = function (toyId) {
 }
 
 const requestShareSuccess = function (toyId) {
-  console.log(`request happened`)
   $('.modal-backdrop').remove()
   clearFields()
   $('#content-msg').html('')
