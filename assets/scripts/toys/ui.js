@@ -63,14 +63,18 @@ const getToysSuccess = function (data) {
       allToys.push(data.toys[i])
     }
   }
-  const showAllToys = showToysTemplate({
-    toys: allToys
-  })
-  $('.modal-backdrop').remove()
-  $('#content-msg').html(showAllToys)
-  $('#successModal').modal('show')
-  $('#success-message').html(`All toys below !`)
-  clearFields()
+  if (allToys.length > 0) {
+    const showAllToys = showToysTemplate({
+      toys: allToys
+    })
+    $('.modal-backdrop').remove()
+    $('#content-msg').html(showAllToys)
+    $('#successModal').modal('show')
+    $('#success-message').html(`All toys below !`)
+    clearFields()
+  } else {
+    $('#content-msg').text('No One has toys available to share at the moment.!')
+  }
 }
 
 const deleteToySuccess = function () {
@@ -105,4 +109,5 @@ module.exports = {
   updateToySuccess,
   getUserToysSuccess,
   requestShareSuccess
+  // checkToyOwner
 }

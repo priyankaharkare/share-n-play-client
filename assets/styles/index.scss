@@ -12,10 +12,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   margin: 10px;
 //   }
 
+.card-body {
+  width: 300px;
+  padding: 20px;
+  margin: 10px auto;
+  line-height: 3;
+  background-color: #f66;
+  text-align: center;
+  /* border-related properties */
+  border: 20px solid black;
+  background-clip: padding-box;
+  border-image-source: url(https://mdn.mozillademos.org/files/13060/border-image.png);
+  border-image-slice: 40;
+  border-image-repeat: round;
+}
+
 .jumbotron {
   color: red;
   background-color: teal;
-  height: 300px;
+  height: 350px;
 }
 
 .btn-style {
