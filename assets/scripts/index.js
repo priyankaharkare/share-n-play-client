@@ -38,6 +38,10 @@ $(() => {
     $('#create-toy-form').find('input').val('')
   })
 
+  $('.why-toyShare').click(function () {
+    $('.modal-backdrop').remove()
+  })
+
   $(document).ready(function () {
     $('#sign-up-button').show()
     $('#sign-in-button').show()

@@ -9,6 +9,7 @@ const onCreateToy = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   toysApi.createToy(data)
+  // console.log(`data is`, data)
     .then(toysUi.createToySuccess)
     .catch(toysUi.createToyError)
 }

@@ -17,9 +17,9 @@
   <header>
     <section class="jumbotron">
       <div class="col-md-6">
-      <img src="public/toy2blocks.png" width="500px"  class="rounded float-left" alt="picture of a toddler's toy !">
+        <img src="public/toy2blocks.png" width="500px" class="rounded float-left" alt="picture of a toddler's toy !">
 
-    </div>
+      </div>
       <h1> Share 'N' Play</h1>
       <p> Creating a toy sharing community</p>
 
@@ -47,11 +47,11 @@
                     <div class="modal-body">
                       <form id="sign-in-form">
                         <div class="form-group">
-                        <h4>  <label for="signInInputUserName">Username</label></h4>
+                          <h4>  <label for="signInInputUserName">Username</label></h4>
                           <input name="credentials[email]" class="form-control" placeholder="Login Username" type="email" id="signInInputUserName" />
                         </div>
                         <div class="form-group">
-                        <h4>  <label for="signInInputPassword">Password</label></h4>
+                          <h4>  <label for="signInInputPassword">Password</label></h4>
                           <input name="credentials[password]" class="form-control" placeholder="Login Password" type="password" id="signInInputPassword" />
                         </div>
                     </div>
@@ -77,16 +77,16 @@
                     <div class="modal-body">
                       <form id="sign-up-form">
                         <div class="form-group">
-                    <h4>      <label for="signUpInputUserName">Email</label></h4>
-                          <input name="credentials[email]" class="form-control" placeholder="Email" type="email" id="signUpInputUserName" />
+                          <h4>      <label for="signUpInputUserName">Email</label></h4>
+                          <input name="credentials[email]" class="form-control" placeholder="Email" type="email" id="signUpInputUserName">
                         </div>
                         <div class="form-group">
-                        <h4>  <label for="signUpInputPassword1">Password</label></h4>
-                          <input name="credentials[password]" class="form-control" placeholder="Password" type="password" id="signUpInputPassword1" />
+                          <h4>  <label for="signUpInputPassword1">Password</label></h4>
+                          <input name="credentials[password]" class="form-control" placeholder="Password" type="password" id="signUpInputPassword1">
                         </div>
                         <div class="form-group">
-                <h4>          <label for="signUpInputPassword2">Password Confirmation</label></h4>
-                          <input name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password" type="password" id="signUpInputPassword2" />
+                          <h4>          <label for="signUpInputPassword2">Password Confirmation</label></h4>
+                          <input name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password" type="password" id="signUpInputPassword2">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -111,11 +111,11 @@
                     <div class="modal-body">
                       <form id="change-password-form">
                         <div class="form-group">
-                    <h4>      <label for="changePassword">Current Password</label></h4>
+                          <h4>      <label for="changePassword">Current Password</label></h4>
                           <input name="passwords[old]" class="form-control" placeholder="current Password" type="text" id="changePassword">
                         </div>
                         <div class="form-group">
-            <h4>              <label for="inputPassword">New Password</label></h4>
+                          <h4> <label for="inputPassword">New Password</label></h4>
                           <input name="passwords[new]" class="form-control" placeholder="Password" type="password" id="inputPassword">
                         </div>
 
@@ -125,7 +125,7 @@
                       <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
 
                     </div>
-                  </form>
+                    </form>
 
                   </div>
                 </div>
@@ -140,18 +140,35 @@
     </section>
   </header>
   <!-- Toy button-->
-  <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-6">
+
+
+  <!-- <div class="col-md-4 text-center"> -->
+    <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">About Us</button>
+
+   <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">How this works</button>
+
+    <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
+
 
   <div class="form-group">
-    <div class="row">
-      <div class="col-sm-2">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-sm-2"> -->
         <input type="button" id="view-all-toys-btn" class="form-control btn btn-all-toys" value="View All Toys">
-      </div>
-      <div class="col-sm-2">
+      <!-- </div> -->
+      <!-- <div class="col-sm-2"> -->
         <input type="button" id="view-user-toys-btn" class="form-control btn btn-user-toys" value="View Your Toys">
-      </div>
+      <!-- </div> -->
+<!-- </div> -->
+</div>
+<!-- </div> -->
     </div>
   </div>
+</div>
+
+
   <!-- empty div below -->
   <div id="content-msg"></div>
 
@@ -170,19 +187,19 @@
   </div>
 
   <!-- Message Modal -->
-        <div id="messageModal" class="modal fade" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
+  <div id="messageModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-                <div id="message"></div>
-              </div>
-            </div>
-          </div>
+          <div id="message"></div>
         </div>
+      </div>
+    </div>
+  </div>
   <!-- Create toy modal below -->
 
 
@@ -197,29 +214,73 @@
           <div class="modal-body">
 
             <form id="create-toy-form">
+
               <div class="form-group">
                 <label for="createToyName">Toy Name</label>
                 <input name="toy[name]" class="form-control" placeholder="Toy name" required type="text" id="createToyName">
               </div>
+
               <div class="form-group">
                 <label for="createToyDescription">Description</label>
                 <input name="toy[description]" class="form-control" placeholder="How would you best describe the toy" required type="text" id="createToyDescription">
               </div>
-              <div><label for="createToyDescription">Do you want to share this?</label>
-                <h3><input type="radio" name="toy[is_available]" value="true"><b>&nbsp;True</b></h3>
-                <h3><input type="radio" name="toy[is_available]" value="false"><b>&nbsp;False</b></h3>
+              <div class="form-group">
+
+                <div class="form-group">
+                  <h5>    <label for="createToyDescription">Do you want to share this?</label></h5>
+                  <h5>  <input type="radio" value="true" name="toy[is_available]"><b>&nbsp;True</b></h5>
+                  <h5>  <input type="radio" value="false" name="toy[is_available]"><b>&nbsp;False</b></h5>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                </div>
               </div>
+
+            </form>
+
+
+
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-default">Submit</button>
-            <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
-          </div>
-          </form>
+
         </div>
       </div>
     </div>
   </div>
 
+
+
+  <div id="about-page" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <h3> Welcome to Share ’N’ Play</h3>
+        <p>This a community to share toddler toys with families like yours because collectively we have more toys than what we have individually. Its also a great way to reduce waste and do our bit for the environment.</br> Happy Sharing !! </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="faq" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <h4 class="about">How this works</h4>
+        <p>This is an open to all community. You do need to create an account at first and then you can use those credentials to Login and start using the website. You don’t have to give one of your toy’s to anyone in order to get one from them. We are sure
+          that you will also share your toy with everyone here once your child has outgrown their toy.</p>
+
+          <h3> View All Toys</h3>
+          <p> This is where you can see everyone’s toys. If you like any specific toy, you can click on the ‘I want this toy !’ button and it will be moved over under ‘Your Toy’</p>
+
+        <h4 class="about"> Adding your toy</h4>
+        <p> You can add your toy to the community by clicking on the 'Add Your Toy' button.
+          You can add the name and the description of the toy. You can also decide whether you want to share the toy at that time or if you just want to keep it on your page. Should you decide to share the toy, it will populate under the All Toys section, otherwise it will be in Your Toys section. You can always choose the 'update toy' option and change your 'toy sharing' status.
+          </p>
+
+
+      </div>
+    </div>
+  </div>
 
 </body>
 

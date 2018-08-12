@@ -17,7 +17,7 @@ const createToySuccess = function (data) {
   // $('#createItemModal').modal('hide')
   // $('#create-item-form')[0].reset()
   $('#successModal').modal('show')
-  $('#success-message').html(`You have added your toy! `)
+  $('#success-message').html(`Your toy has been added.`)
   clearFields()
 }
 
@@ -98,7 +98,7 @@ const requestShareSuccess = function (toyId) {
   clearFields()
   $('#content-msg').html('')
   $('#successModal').modal('show')
-  $('#success-message').html(`Transfer Requested !! Hope the kids enjoy the toy! `)
+  $('#success-message').html(`Great- you can view this toy under 'Your toys' !! Hope the kids enjoy the toy! `)
 }
 
 module.exports = {
