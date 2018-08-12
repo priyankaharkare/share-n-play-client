@@ -35,12 +35,12 @@ $(() => {
     $('#sign-up-form').find('input').val('')
     $('#change-password-form').find('input').val('')
     $('.update-form').find('input').val('')
-    $('#create-toy-form').find('input').val('')
+    // $('#create-toy-form').find('input').val('')
   })
 
-  $('.why-toyShare').click(function () {
-    $('.modal-backdrop').remove()
-  })
+  // $('.why-toyShare').click(function () {
+  //   $('.modal-backdrop').remove()
+  // })
 
   $(document).ready(function () {
     $('#sign-up-button').show()
@@ -52,6 +52,6 @@ $(() => {
     $('#view-user-toys-btn').hide()
     $('.share-toy-button').hide()
     $('#sign-out').hide()
-    $('.faq-button').show()
+    $('.faq-button').hide()
   })
 })

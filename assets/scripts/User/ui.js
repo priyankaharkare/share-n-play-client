@@ -5,7 +5,6 @@ const clearFields = function () {
   $('#sign-up-form').find('input').val('')
   $('#change-password-form').find('input').val('')
   // $('.update-form').find('input').val('')
-  // $('#create-toy-form').find('input').val('')
 }
 
 const signUpSuccess = function (response) {
@@ -30,7 +29,7 @@ const signUpFailure = function (response) {
 }
 
 const signInSuccess = function (response) {
-  $('.faq-button').toggle()
+  $('.faq-button').show()
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
   $('#loginModal').modal('hide')

@@ -7,15 +7,15 @@ const clearFields = function () {
   $('#sign-in-form').find('input').val('')
   $('#sign-up-form').find('input').val('')
   $('#change-password-form').find('input').val('')
-  // $('.update-form').find('input').val('')
-  $('#create-toy-form').find('input').val('')
+  // $('.update-form').clear()
+  // $('#create-toy-form').find('input').val('')
 }
 
 const createToySuccess = function (data) {
   store.toy = {}
   store.toy.id = data.toy.id
   // $('#createItemModal').modal('hide')
-  // $('#create-item-form')[0].reset()
+  // $('#create-item-form').reset()
   $('#successModal').modal('show')
   $('#success-message').html(`Your toy has been added.`)
   clearFields()
