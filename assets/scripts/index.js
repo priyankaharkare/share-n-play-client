@@ -52,5 +52,6 @@ $(() => {
     $('#view-user-toys-btn').hide()
     $('.share-toy-button').hide()
     $('#sign-out').hide()
+    $('.faq-button').show()
   })
 })

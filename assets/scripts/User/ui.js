@@ -30,6 +30,7 @@ const signUpFailure = function (response) {
 }
 
 const signInSuccess = function (response) {
+  $('.faq-button').toggle()
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
   $('#loginModal').modal('hide')

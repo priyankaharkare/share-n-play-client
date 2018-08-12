@@ -24,9 +24,16 @@
       <p> Creating a toy sharing community</p>
 
       <!-- login/sign in modal below -->
+
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
+
+            <button class="btn btn-primary btn-sm pull-right why-toyShare" data-target="#about-page" data-toggle="modal">About Us</button>
+
+            <!-- <button class="btn btn-primary btn-sm pull-left faq-button" data-target="#faq" data-toggle="modal">How this works </button> -->
+
+
             <button id="sign-up-button" class="btn btn-primary btn-sm pull-right" data-target="#signUpModal" data-toggle="modal">Sign-Up </button>
 
             <button id="sign-in-button" class="btn btn-primary btn-sm pull-right" data-target="#loginModal" data-toggle="modal">Login </button>
@@ -125,6 +132,7 @@
                       <button class="btn btn-default close-button" data-dismiss="modal">Close</button>
 
                     </div>
+
                     </form>
 
                   </div>
@@ -146,24 +154,21 @@
 
 
   <!-- <div class="col-md-4 text-center"> -->
-    <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">About Us</button>
+    <!-- <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">About Us</button>
+    <button class="btn btn-primary btn-sm pull-left faq-button" data-target="#faq" data-toggle="modal">How this works </button>
+  -->
+     <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
 
-   <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">How this works</button>
-
-    <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
-
-
-  <div class="form-group">
+    <div class="form-group">
     <!-- <div class="row"> -->
       <!-- <div class="col-sm-2"> -->
         <input type="button" id="view-all-toys-btn" class="form-control btn btn-all-toys" value="View All Toys">
       <!-- </div> -->
       <!-- <div class="col-sm-2"> -->
         <input type="button" id="view-user-toys-btn" class="form-control btn btn-user-toys" value="View Your Toys">
-      <!-- </div> -->
+      </div>
 <!-- </div> -->
-</div>
-<!-- </div> -->
+  <!-- </div> -->
     </div>
   </div>
 </div>
@@ -249,6 +254,7 @@
     </div>
   </div>
 
+<button class="btn btn-primary btn-sm pull-left faq-button" data-target="#faq" data-toggle="modal">How this works </button>
 
 
   <div id="about-page" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -261,7 +267,7 @@
     </div>
   </div>
 
-  <div id="faq" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div id="faq" class="modal fade bd-example-modal-lg faq-button" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
