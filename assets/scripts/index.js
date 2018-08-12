@@ -35,7 +35,7 @@ $(() => {
     $('#sign-up-form').find('input').val('')
     $('#change-password-form').find('input').val('')
     $('.update-form').find('input').val('')
-    // $('#create-toy-form').find('input').val('')
+    $('#create-toy-form')[0].reset()
   })
 
   // $('.why-toyShare').click(function () {

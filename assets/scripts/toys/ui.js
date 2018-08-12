@@ -7,7 +7,8 @@ const clearFields = function () {
   $('#sign-in-form').find('input').val('')
   $('#sign-up-form').find('input').val('')
   $('#change-password-form').find('input').val('')
-  // $('.update-form').clear()
+  $('#create-toy-form')[0].reset()
+
   // $('#create-toy-form').find('input').val('')
 }
 
