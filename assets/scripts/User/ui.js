@@ -11,7 +11,7 @@ const signUpSuccess = function (response) {
   // console.log(`response.user`, response.user)
   // store.user.email = response.user.email
   $('#loginModal').modal('show')
-  $('#signUpModal').modal('hide')
+  $('#signUpModal').modal(  'hide')
   $('#content-msg').html("You've signed up")
   $('#sign-up-form').find('input').val('')
 
