@@ -19,6 +19,8 @@ const createToySuccess = function (data) {
   // $('#create-item-form').reset()
   $('#successModal').modal('show')
   $('#success-message').html(`Your toy has been added.`)
+  $('#content-msg').empty()
+
   clearFields()
 }
 
