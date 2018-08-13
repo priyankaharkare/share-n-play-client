@@ -36,6 +36,7 @@ const signInSuccess = function (response) {
   $('#change-password-button').show()
   $('#sign-out').show()
   $('.share-toy-button').show()
+  $('#content-msg').empty()
 
   $('#create-toy-button').show()
   $('#view-all-toys-btn').show()
@@ -79,6 +80,8 @@ const signOutSuccess = function (response) {
   $('#view-user-toys-btn').hide()
   $('#sign-out').hide()
   $('.card').hide()
+  $('#content-msg').empty()
+  $('.faq-button').hide()
 
   $('#successModal').modal('show')
   $('#success-message').html(`You are signed out, GoodBye and See You Soon !`)
@@ -87,6 +90,7 @@ const signOutSuccess = function (response) {
 const signOutFailureure = function (response) {
   clearFields()
   $('#successModal').modal('show')
+  $('#content-msg').html('')
   $('#success-message').html(`We could not sign you out, try again !`)
 }
 

@@ -36,6 +36,7 @@ $(() => {
     $('#change-password-form').find('input').val('')
     $('.update-form').find('input').val('')
     $('#create-toy-form')[0].reset()
+    $('#content-msg').empty()
   })
 
   // $('.why-toyShare').click(function () {
@@ -53,5 +54,6 @@ $(() => {
     $('.share-toy-button').hide()
     $('#sign-out').hide()
     $('.faq-button').hide()
+    // $('#content-msg').empty()
   })
 })
