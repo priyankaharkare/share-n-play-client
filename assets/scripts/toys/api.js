@@ -3,22 +3,44 @@
 const store = require('../store')
 const config = require('../config')
 
+// const createToy = function (data) {
+//   return $.ajax({
+//     method: 'POST',
+//     url: config.apiUrl + '/toys',
+//     data: {
+//       toy: {
+//         data: data,
+//
+//     },
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
+// const createSurvey = function (data) {
+//   return $.ajax({
+//     method: 'POST',
+//     url: config.apiUrl + '/surveys',
+//     data: data,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 const createToy = function (data) {
+  console.log(`create toy api data is `, data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/toys',
-    data: {
-      toy: {
-        data: data,
-        processData: false,
-        contentType: false
-      }
-    },
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
+
 const getToys = function () {
   return $.ajax({
     method: 'GET',
