@@ -2,7 +2,7 @@
 
 const authEvents = require('./user/events')
 const toyEvents = require('./toys/events')
-
+const imageEvents = require('./image/events')
 // const authUi = require('./user/ui')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -13,7 +13,7 @@ const toyEvents = require('./toys/events')
 $(() => {
   // your JS code goes here
   toyEvents.addHandlers()
-
+  $('#upload-image').on('submit', imageEvents.onUploadImage)
   // Authentication Event Handler
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)

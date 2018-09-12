@@ -7,7 +7,13 @@ const createToy = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/toys',
-    data: data,
+    data: {
+      toy: {
+        data: data,
+        processData: false,
+        contentType: false
+      }
+    },
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

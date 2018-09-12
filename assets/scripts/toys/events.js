@@ -8,8 +8,10 @@ const onCreateToy = function (event) {
   $('#createToyModal').modal('hide')
   event.preventDefault()
   const data = getFormFields(event.target)
+  const formData = new FormData(event.target)
+  console.log(`formdata is`, formData)
   toysApi.createToy(data)
-  // console.log(`data is`, data)
+  console.log(`data is`, data)
     .then(toysUi.createToySuccess)
     .catch(toysUi.createToyError)
 }

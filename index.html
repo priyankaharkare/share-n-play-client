@@ -39,6 +39,7 @@
             <button id="sign-in-button" class="btn btn-primary btn-sm pull-right" data-target="#loginModal" data-toggle="modal">Login </button>
 
             <button id="change-password-button" class="btn btn-primary btn-sm pull-right" data-target="#changePassword" data-toggle="modal">Change Password </button>
+
             <button id="sign-out" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"> Sign Out</button>
 
 
@@ -157,7 +158,7 @@
     <!-- <button class="btn btn-primary btn-sm pull-left why-toyShare" data-target="#about-page" data-toggle="modal">About Us</button>
     <button class="btn btn-primary btn-sm pull-left faq-button" data-target="#faq" data-toggle="modal">How this works </button>
   -->
-    <button class="btn btn-primary btn-sm pull-left share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
+    <button class="btn share-toy-button" data-target="#createToyModal" data-toggle="modal">Add Your Toy</button>
 
     <div class="form-group">
     <!-- <div class="row"> -->
@@ -176,7 +177,7 @@
 
 
   <!-- empty div below -->
-  <div id="content-msg"></div>
+  <div class="content-msg" id="content-msg"></div>
 
   <!-- Success Message Modal -->
   <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
@@ -219,9 +220,8 @@
 
           <div class="modal-body">
 
-            <form id="create-toy-form">
-
-              <div class="form-group">
+            <form method="post" enctype="multipart/form-data"id="create-toy-form">
+               <div class="form-group">
                 <label for="createToyName">Toy Name</label>
                 <input name="toy[name]" class="form-control" placeholder="Toy name" required type="text" id="createToyName">
               </div>
@@ -237,6 +237,21 @@
                   <h5>  <input type="radio" value="true" name="toy[is_available]"><b>&nbsp;Sure</b></h5>
                   <h5>  <input type="radio" value="false" name="toy[is_available]" required><b>&nbsp;Not Yet</b></h5>
                 </div>
+<!-- trying to add the uploading images functionality
+                <div id="upload-image">
+                  / <form method="post" enctype="multipart/form-data"> -->
+                  <!-- <div>
+                    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+                    <input type="file" id="image_uploads" name="image[image]" accept="image/*" multiple>
+                  </div> -->
+                  <!-- <div class="preview">
+                    <p>No files currently selected for upload</p>
+                  </div> -->
+                  <!-- <div>
+                    <button class="upload-button">Submit</button>
+                  </div> -->
+                <!-- </form> -->
+                <!-- </div>  -->
 
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-default">Submit</button>
@@ -255,7 +270,7 @@
     </div>
   </div>
 
-<!-- <button class="btn btn-primary btn-sm pull-left faq-button" data-target="#faq" data-toggle="modal">How this works </button> -->
+
 
 
   <div id="about-page" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

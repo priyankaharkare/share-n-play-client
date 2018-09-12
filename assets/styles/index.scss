@@ -2,6 +2,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Teko:700');
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+$roboto-slab: 'Roboto Slab', serif;
+$open-sans: 'Open Sans', sans-serif;
+$dark-blue: #036;
 
 // .card {
 //   background-color: blue;
@@ -11,6 +15,61 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   width: 30.5%;
 //   margin: 10px;
 //   }
+
+
+.btn {
+  font-size: 12px;
+  padding: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 5px;
+  height: 100%;
+  transition: all 0.3s;
+  --webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  outline: none;
+  border-color: $dark-blue;
+  width: auto;
+ }
+
+.btn-primary {
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 5px;
+  height: 100%;
+  transition: all 0.3s;
+  --webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  outline: none;
+}
+
+// .btn-user-toys {
+//   font-size: 12px;
+//   padding: 10px;
+//   letter-spacing: 1.4px;
+//   text-transform: uppercase;
+//   margin: 5px;
+//   height: 100%;
+//   transition: all 0.3s;
+//   --webkit-transition: all 0.3s;
+//   -moz-transition: all 0.3s;
+//   outline: none;
+// }
+
+.content-msg {
+  margin: 10px;
+  font-size: 20px;
+  font-family: $roboto-slab;
+  text-align: center;
+}
+
+.upload {
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  margin-bottom: 10px;
+}
 
 .card-body {
   width: 300px;
@@ -22,7 +81,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   /* border-related properties */
   border: 20px solid black;
   background-clip: padding-box;
-  border-image-source: url(https://mdn.mozillademos.org/files/13060/border-image.png);
+  border-image-source: url("https://mdn.mozillademos.org/files/13060/border-image.png");
   border-image-slice: 40;
   border-image-repeat: round;
 }
@@ -32,22 +91,32 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background-color: bcdce3;
   font-size: 50px;
   height: 355px;
+  font-family: $roboto-slab;
+  letter-spacing: 1.4px;
+  // text-transform: uppercase;
 }
 
 .btn-style {
   margin: 10px;
 }
 
+p {
+  margin: 10px;
+}
+
 h5 {
   word-wrap: break-word;
+  margin: 10px;
 }
 
 h4 {
   word-wrap: break-word;
+  margin: 10px;
 }
 
 h3 {
   word-wrap: break-word;
+  margin: 10px;
 }
 
 .brand-custom {
@@ -75,7 +144,6 @@ h3 {
   padding: 30px;
   text-align: center;
 }
-
 // .faq {
 //   background-color: #1CB94E;
 // 	outline: none;
