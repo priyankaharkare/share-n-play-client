@@ -3,18 +3,24 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const toysUi = require('./ui.js')
 const toysApi = require('./api.js')
 // const usersToysUi = require('../usersToys/ui.js')
+// Data: A plain object or string that is sent to the server with the request.
+//
 
 const onCreateToy = function (event) {
   $('#createToyModal').modal('hide')
   event.preventDefault()
   const data = getFormFields(event.target)
-  const formData = new FormData(event.target)
-  console.log(`formdata is`, formData)
+  // const formData = new FormData(event.target)
+  // console.log(`formdata is`, formData)
   toysApi.createToy(data)
   // console.log(`data is`, data)
     .then(toysUi.createToySuccess)
     .catch(toysUi.createToyError)
 }
+
+// The then() method returns a Promise.
+// It takes up to two arguments: callback functions for the success
+// and failure cases of the Promise.
 
 const onGetToys = () => {
   // toysUi.resetUiHandleing()

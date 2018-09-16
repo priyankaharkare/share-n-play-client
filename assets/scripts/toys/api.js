@@ -18,19 +18,8 @@ const config = require('../config')
 //   })
 // }
 
-// const createSurvey = function (data) {
-//   return $.ajax({
-//     method: 'POST',
-//     url: config.apiUrl + '/surveys',
-//     data: data,
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-
 const createToy = function (data) {
-  console.log(`create toy api data is `, data)
+  // console.log(`create toy api data is `, data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/toys',

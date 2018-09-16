@@ -31,7 +31,7 @@ const createToyError = function () {
   $('#successModal').modal('show')
   $('#success-message').html(`Uh oh, please try again! `)
 }
-
+// checking for non null users cos some toys were created on back end
 const getUserToysSuccess = function (data) {
   store.toys = data.toys
   const userToys = []
@@ -57,7 +57,7 @@ const getUserToysSuccess = function (data) {
   }
 }
 
-// stick to code above
+// we want to only show toys that are available for sharing
 const getToysSuccess = function (data) {
   store.toys = data.toys
   const allToys = []

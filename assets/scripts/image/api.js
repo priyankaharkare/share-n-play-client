@@ -22,7 +22,7 @@ const config = require('../config')
 // </script>
 
 const uploadImage = function (formData) {
-  console.log(`api data is`, formData)
+  // console.log(`api data is`, formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/toys',
